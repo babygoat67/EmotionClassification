@@ -4,7 +4,7 @@ This project uses a **Convolutional Neural Network (CNN)** built with **TensorFl
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 ```
 emotion-detection/
 │
@@ -22,22 +22,22 @@ emotion-detection/
 
 ---
 
-## 🧠 Overview
+## Overview
 The model is trained on a custom dataset containing **happy** and **sad** facial expressions.  
 It uses **OpenCV** for image handling and **TensorFlow** for model training.  
 After training, the model predicts whether a new image shows a happy or sad emotion.
 
 ---
 
-## ⚙️ Setup Instructions
+## Setup Instructions
 
-### 1️⃣ Install Dependencies
+### 1️ Install Dependencies
 Make sure Python 3.8+ is installed, then install all required packages:
 ```bash
 pip install tensorflow opencv-python matplotlib
 ```
 
-### 2️⃣ Dataset Preparation
+### 2️ Dataset Preparation
 Your dataset folder (data/) should contain two subfolders:
 ```
 data/
@@ -52,13 +52,13 @@ data/
 ```
 Each subfolder represents one class label.
 
-### 3️⃣ Data Cleaning
+### 3️ Data Cleaning
 The script automatically checks and removes invalid images or files not matching the allowed extensions:
 ```python
 image_exts = ['jpeg', 'jpg', 'bmp', 'png']
 ```
 
-### 4️⃣ Data Loading
+### 4️ Data Loading
 Images are loaded using:
 ```python
 data = tf.keras.utils.image_dataset_from_directory('data')
@@ -68,7 +68,7 @@ Labels are automatically generated (0 for happy, 1 for sad)
 
 ---
 
-## 🧩 Model Architecture
+## Model Architecture
 A simple 3-layer CNN is used:
 
 | Layer Type          | Output Shape      | Parameters |
@@ -87,7 +87,7 @@ Total parameters: 3,696,625
 
 ---
 
-## 🧠 Model Training
+## Model Training
 The model is trained for 20 epochs with TensorBoard logging:
 ```python
 logdir = 'logs'
@@ -102,7 +102,7 @@ Training and validation accuracy are plotted with Matplotlib.
 
 ---
 
-## 📊 Model Evaluation
+## Model Evaluation
 Model performance is measured using:
 
 - Precision
@@ -116,7 +116,7 @@ Precision : 1.0, Recall : 1.0, Accuracy : 1.0
 
 ---
 
-## 🧪 Testing on New Images
+## Testing on New Images
 Test with an unseen image:
 ```python
 img = cv.imread('happytest2.jpeg')
@@ -131,12 +131,12 @@ If `yhat > 0.5`, the model predicts sad, otherwise happy.
 
 ---
 
-## 💾 Saving & Loading the Model
+## Saving & Loading the Model
 ```python
 model.save('models/emotionmodel.h5')
 new_model = tf.keras.models.load_model('models/emotionmodel.h5')
 ```
-⚠️ Note: HDF5 (.h5) format is legacy.  
+Note: HDF5 (.h5) format is legacy.  
 You can also save using the newer .keras format:
 ```python
 model.save('models/emotionmodel.keras')
@@ -163,15 +163,14 @@ model.save('models/emotionmodel.keras')
 
 ---
 
-## 🚀 Future Improvements
+## Future Improvements
 - Add more emotion categories (e.g., angry, surprised, neutral)  
-- Improve accuracy with data augmentation  
 - Use pre-trained CNNs (e.g., MobileNetV2, ResNet50)  
-- Deploy as a web app using Flask or Streamlit  
+- Deploy as a web app 
 
 ---
 
-## 👨‍💻 Author
+## Author
 Choo Yit Shern  
-📍 Universiti Sains Malaysia  
-🧠 Passionate about AI, deep learning, and computer vision.
+Universiti Sains Malaysia  
+Passionate about AI, deep learning, and computer vision.
