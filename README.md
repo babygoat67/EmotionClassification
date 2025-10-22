@@ -95,6 +95,10 @@ tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=logdir)
 hist = model.fit(train, epochs=20, validation_data=val, callbacks=[tensorboard_callback])
 ```
 Training and validation accuracy are plotted with Matplotlib.
+<img width="616" height="521" alt="image" src="https://github.com/user-attachments/assets/9c6d879b-e8df-46d8-8d15-52efffe4f5bc" />
+<img width="615" height="515" alt="image" src="https://github.com/user-attachments/assets/efc49b89-8590-47e8-b7e9-47192d825bf7" />
+
+
 
 ---
 
