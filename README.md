@@ -16,7 +16,7 @@ emotion-detection/
 │   └── emotionmodel.h5
 │
 ├── happytest2.jpeg
-├── imageClassification.ipynb  # (your main training script)
+├── imageClassification.ipynb
 └── README.md
 ```
 
