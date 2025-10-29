@@ -1,10 +1,10 @@
-Emotion Detection using CNN (TensorFlow)
+# 😊 Emotion Detection using CNN (TensorFlow)
 
 This project uses a **Convolutional Neural Network (CNN)** built with **TensorFlow and Keras** to classify human emotions (happy 😄 or sad 😢) from images.  
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 ```
 emotion-detection/
 │
@@ -15,29 +15,28 @@ emotion-detection/
 ├── models/
 │   └── emotionmodel.h5
 │
-├── happytest2.jpeg
-├── imageClassification.ipynb
+├── train.ipynb  # (your main training script)
 └── README.md
 ```
 
 ---
 
-## Overview
+## 🧠 Overview
 The model is trained on a custom dataset containing **happy** and **sad** facial expressions.  
 It uses **OpenCV** for image handling and **TensorFlow** for model training.  
 After training, the model predicts whether a new image shows a happy or sad emotion.
 
 ---
 
-## Setup Instructions
+## ⚙️ Setup Instructions
 
-### 1️ Install Dependencies
+### 1️⃣ Install Dependencies
 Make sure Python 3.8+ is installed, then install all required packages:
 ```bash
 pip install tensorflow opencv-python matplotlib
 ```
 
-### 2️ Dataset Preparation
+### 2️⃣ Dataset Preparation
 Your dataset folder (data/) should contain two subfolders:
 ```
 data/
@@ -52,13 +51,13 @@ data/
 ```
 Each subfolder represents one class label.
 
-### 3️ Data Cleaning
+### 3️⃣ Data Cleaning
 The script automatically checks and removes invalid images or files not matching the allowed extensions:
 ```python
 image_exts = ['jpeg', 'jpg', 'bmp', 'png']
 ```
 
-### 4️ Data Loading
+### 4️⃣ Data Loading
 Images are loaded using:
 ```python
 data = tf.keras.utils.image_dataset_from_directory('data')
@@ -68,7 +67,7 @@ Labels are automatically generated (0 for happy, 1 for sad)
 
 ---
 
-## Model Architecture
+## 🧩 Model Architecture
 A simple 3-layer CNN is used:
 
 | Layer Type          | Output Shape      | Parameters |
@@ -87,7 +86,7 @@ Total parameters: 3,696,625
 
 ---
 
-## Model Training
+## 🧠 Model Training
 The model is trained for 20 epochs with TensorBoard logging:
 ```python
 logdir = 'logs'
@@ -95,14 +94,10 @@ tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=logdir)
 hist = model.fit(train, epochs=20, validation_data=val, callbacks=[tensorboard_callback])
 ```
 Training and validation accuracy are plotted with Matplotlib.
-<img width="616" height="521" alt="image" src="https://github.com/user-attachments/assets/9c6d879b-e8df-46d8-8d15-52efffe4f5bc" />
-<img width="615" height="515" alt="image" src="https://github.com/user-attachments/assets/efc49b89-8590-47e8-b7e9-47192d825bf7" />
-
-
 
 ---
 
-## Model Evaluation
+## 📊 Model Evaluation
 Model performance is measured using:
 
 - Precision
@@ -111,12 +106,12 @@ Model performance is measured using:
 
 Example output:
 ```python
-Precision : 1.0, Recall : 1.0, Accuracy : 1.0
+Precision : 1.0, Recall : 0.991304337978363,Accuracy : 0.9955357313156128
 ```
 
 ---
 
-## Testing on New Images
+## 🧪 Testing on New Images
 Test with an unseen image:
 ```python
 img = cv.imread('happytest2.jpeg')
@@ -131,12 +126,12 @@ If `yhat > 0.5`, the model predicts sad, otherwise happy.
 
 ---
 
-## Saving & Loading the Model
+## 💾 Saving & Loading the Model
 ```python
 model.save('models/emotionmodel.h5')
 new_model = tf.keras.models.load_model('models/emotionmodel.h5')
 ```
-Note: HDF5 (.h5) format is legacy.  
+⚠️ Note: HDF5 (.h5) format is legacy.  
 You can also save using the newer .keras format:
 ```python
 model.save('models/emotionmodel.keras')
@@ -163,14 +158,15 @@ model.save('models/emotionmodel.keras')
 
 ---
 
-## Future Improvements
+## 🚀 Future Improvements
 - Add more emotion categories (e.g., angry, surprised, neutral)  
+- Improve accuracy with data augmentation  
 - Use pre-trained CNNs (e.g., MobileNetV2, ResNet50)  
-- Deploy as a web app 
+- Deploy as a web app using Flask or Streamlit  
 
 ---
 
-## Author
+## 👨‍💻 Author
 Choo Yit Shern  
-Universiti Sains Malaysia  
-Passionate about AI, deep learning, and computer vision.
+📍 Universiti Sains Malaysia  
+🧠 Passionate about AI, deep learning, and computer vision.
