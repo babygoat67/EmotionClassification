@@ -95,6 +95,11 @@ hist = model.fit(train, epochs=20, validation_data=val, callbacks=[tensorboard_c
 ```
 Training and validation accuracy are plotted with Matplotlib.
 
+<img width="541" height="454" alt="image" src="https://github.com/user-attachments/assets/88dead54-7d53-4525-b0c4-e9d97450b85e" />
+<img width="539" height="453" alt="image" src="https://github.com/user-attachments/assets/6738f29b-8350-45e7-b182-73fa76f9706b" />
+
+
+
 ---
 
 ## 📊 Model Evaluation
